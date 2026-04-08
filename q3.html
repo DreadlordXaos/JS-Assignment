@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirror Corridor</title>
+</head>
+<body>
+    <script>
+    let N = parseInt(prompt("Enter N:"));
+    let K = parseInt(prompt("Enter K:"));
+
+    function isPalindrome(num) {
+        let s = num.toString();
+        return s === s.split("").reverse().join("");
+    }
+
+    let answer = -1;
+
+    for (let X = 0; X <= 100000; X++) {
+        let val = N + X;
+        if (val % K === 0 && isPalindrome(val)) {
+            answer = X;
+            break;
+        }
+    }
+
+    alert(answer);
+    </script>
+</body>
+</html>
